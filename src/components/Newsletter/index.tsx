@@ -11,10 +11,10 @@ export const Newsletter = () => {
   const schema = Yup.object().shape({
     name: Yup.string()
       .min(4, "Preencha com seu nome completo ")
-      .required("Required"),
+      .required("preencha o campo"),
     email: Yup.string()
       .email("Preencha com um e-mail válido")
-      .required("Required"),
+      .required("preencha o campo"),
   });
 
   return (

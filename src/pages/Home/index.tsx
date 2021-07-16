@@ -7,7 +7,7 @@ export const Home = () => {
     <>
       <Header />
       <Carousel />
-      {/* <Product /> */}
+      <Product />
       <Newsletter />
     </>
   );
