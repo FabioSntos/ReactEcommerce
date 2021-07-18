@@ -1,6 +1,5 @@
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FiStar } from "react-icons/fi";
-import { api } from "../../services/api";
 
 import { Container } from "./styles";
 

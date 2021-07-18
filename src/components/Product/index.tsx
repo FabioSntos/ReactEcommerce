@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { Container, ProductContainer } from "./styles";
 
@@ -15,8 +15,6 @@ interface IProduct {
 }
 
 export const Product = () => {
-  const { productAmount, setProductAmount } = useProduct();
-
   const { increaseProductAmount } = useProduct();
 
   const [products, setProducts] = useState<IProduct[]>([]);
