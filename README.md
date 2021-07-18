@@ -4,6 +4,7 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Formik](https://formik.org/)
 - [Axios](https://github.com/axios/axios)
 - [Styled Componensts](https://styled-components.com/)
 
