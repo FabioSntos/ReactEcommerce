@@ -4,6 +4,23 @@ export const Container = styled.main`
   height: 500px;
   width: 80%;
   margin: 0 auto;
+  font-family: "Nunito";
+  font-size: 20px;
+  font-weight: 900;
+
+  h3::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #c0c0c0;
+  }
+
+  .productWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const ProductContainer = styled.div`
@@ -40,5 +57,6 @@ export const ProductContainer = styled.div`
     height: 32px;
     font-family: "Nunito";
     margin-top: 10px;
+    cursor: pointer;
   }
 `;

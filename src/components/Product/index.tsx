@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { api } from "../../services/api";
 import { Container, ProductContainer } from "./styles";
+
+import { useProduct } from "../../context/ProductContext";
+import Evaluation from "../Evaluation";
 
 interface IProduct {
   productId: number;
@@ -12,27 +15,34 @@ interface IProduct {
 }
 
 export const Product = () => {
+  const { productAmount, setProductAmount } = useProduct();
+
+  const { increaseProductAmount } = useProduct();
+
   const [products, setProducts] = useState<IProduct[]>([]);
+
   useEffect(() => {
     api.get("products").then((res) => setProducts(res.data));
   }, []);
-  console.log(products);
 
   return (
     <Container>
-      {products.map((product) => {
-        return (
-          <ProductContainer>
-            <img src={product.imageUrl} alt={product.productName} />
-            <div className="productInfo">
-              <p>{product.productName}</p>
-              <span>{product.stars}</span>
-              <div className="strong"> por R$ {product.price}</div>
-              <button>COMPRAR</button>
-            </div>
-          </ProductContainer>
-        );
-      })}
+      <h3>Mais Vendidos</h3>
+      <div className="productWrapper">
+        {products.map((product) => {
+          return (
+            <ProductContainer key={product.productId}>
+              <img src={product.imageUrl} alt={product.productName} />
+              <div className="productInfo">
+                <p>{product.productName}</p>
+                <Evaluation evaluation={product.stars} />
+                <div className="strong"> por R$ {product.price}</div>
+                <button onClick={increaseProductAmount}>COMPRAR</button>
+              </div>
+            </ProductContainer>
+          );
+        })}
+      </div>
     </Container>
   );
 };
